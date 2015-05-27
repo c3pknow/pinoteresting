@@ -1,6 +1,21 @@
-$body-bg:	#9b59b6;
+$body-bg:	#2980b9;
+$text-color: #fff;
 $navbar-inverse-bg:	#2c3e50;
 $navbar-inverse-link-color: white;
 $brand-primary: #e67e22;
 $jumbotron-bg: #bdc3c7;
+$navbar-inverse-brand-color: orange;
 @import 'bootstrap';
+
+
+.center {
+	text-align: center;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
