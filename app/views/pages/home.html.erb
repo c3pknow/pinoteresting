@@ -1,51 +1,60 @@
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-  
-    <div class="item active">
-			<%= image_tag("carousel1.jpeg", alt: 'Site Logo', class: "logo center") %>   
-			<div class="carousel-caption">  	
-				<h1>Welcome!</h1>
-				<p>Click here to <%= link_to "Sign Up!", "http://www.google.com", class: "btn btn-primary"%></p>
+
+
+
+
+<% if user_signed_in? %>
+  # do something
+
+
+<% else %>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+    
+      <div class="item">
+  			<%= image_tag("carousel1.jpeg", alt: 'Site Logo', class: "logo center") %>   
+  			<div class="carousel-caption">  	
+  				<h1>Welcome!</h1>
+  				<p>Click here to <%= link_to "Sign Up!", new_user_registration_path, class: "btn btn-primary"%></p>
+        </div>
+      </div>
+      
+      <div class="item">
+       <%= image_tag("carousel2.jpg", height: 533, width: 800, alt: 'Site Logo', class: "logo center") %>   
+        <div class="carousel-caption"> 
+        <h1>Wanna learn more?</h1>
+  				<p>Click here to <%= link_to "Get more info", "http://www.google.com", class: "btn btn-primary"%></p>
+       
+      		</div>
+    	</div>
+      
+      <div class="item active">
+       <%= image_tag("carousel3.jpg", height: 533, width: 800, alt: 'Site Logo', class: "logo center") %>   
+        <div class="carousel-caption"> 
+        <h1>Log In!</h1>
+  				<p>Click here to <%= link_to "Do it...", new_user_session_path, class: "btn btn-primary"%></p>
+       
       </div>
     </div>
-    
-    <div class="item">
-     <%= image_tag("carousel2.jpg", height: 533, width: 800, alt: 'Site Logo', class: "logo center") %>   
-      <div class="carousel-caption"> 
-      <h1>Wanna learn more?</h1>
-				<p>Click here to <%= link_to "Get more info", "http://www.google.com", class: "btn btn-primary"%></p>
-     
-    		</div>
-  	</div>
-    
-    <div class="item">
-     <%= image_tag("carousel3.jpg", height: 533, width: 800, alt: 'Site Logo', class: "logo center") %>   
-      <div class="carousel-caption"> 
-      <h1>Something Else?</h1>
-				<p>Click here to <%= link_to "Do it...", "http://www.google.com", class: "btn btn-primary"%></p>
-     
-    </div>
   </div>
-</div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<% end %>
 
 
 
